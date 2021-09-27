@@ -40,42 +40,43 @@ const playGame = () => {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (i = 0; i < 5; i++) {
-    // prompt play form the user and convert the player input to lower case to make it case insensitive
-    let playerSelection = prompt(
-      "choose paper, rock, or scissor: "
-    ).toLowerCase();
+  // for (i = 0; i < 5; i++) {
+  // prompt play form the user and convert the player input to lower case to make it case insensitive
+  let playerSelection = prompt(
+    "choose paper, rock, or scissor: "
+  ).toLowerCase();
 
-    // check if the input is valid
-    if (
-      playerSelection === "rock" ||
-      playerSelection === "scissor" ||
-      playerSelection === "paper"
-    ) {
-      // play a round and store the result in roundResult
-      let roundResult = playRound(playerSelection, computerPlay());
+  //check if the input is valid then start the round otherwise print error
+  if (
+    playerSelection === "rock" ||
+    playerSelection === "scissor" ||
+    playerSelection === "paper"
+  ) {
+    // play a round and store the result in roundResult
+    let roundResult = playRound(playerSelection, computerPlay());
 
-      if (roundResult === "player won") {
-        playerScore++;
-        console.log(
-          `player won this round (player: ${playerScore} - computer: ${computerScore})`
-        );
-      } else if (roundResult === "computer won") {
-        computerScore++;
-        console.log(
-          `computer won this round (player: ${playerScore} - computer: ${computerScore})`
-        );
-      } else {
-        console.log("tie");
-      }
+    // check winner then print round result and increment score by 1 for the winner
+    if (roundResult === "player won") {
+      playerScore++;
+      console.log(
+        `player won this round (player: ${playerScore} - computer: ${computerScore})`
+      );
+    } else if (roundResult === "computer won") {
+      computerScore++;
+      console.log(
+        `computer won this round (player: ${playerScore} - computer: ${computerScore})`
+      );
     } else {
-      console.log("enter valid option");
-      i--;
+      console.log("tie");
     }
-
-    // check if score is 3 to stop looping and end the game
-    if (playerScore >= 3 || computerScore >= 3) break;
+  } else {
+    console.log("enter valid option");
+    i--;
   }
+
+  // check if score is 3 to stop looping and end the game since it is best of five game
+  // if (playerScore >= 3 || computerScore >= 3) break;
+  // }
 
   console.log(gameWinner(playerScore, computerScore));
 };
