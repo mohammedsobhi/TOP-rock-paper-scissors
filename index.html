@@ -5,8 +5,88 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissor</title>
+  
+  <!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+<!-- CSS Reset -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+
+<!-- Milligram CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+<!-- link my custom css -->
+<link rel="stylesheet" href="style.css">
+
+<!-- icons -->
+<script src="https://unpkg.com/phosphor-icons"></script>
+
 </head>
 <body>
+  <header class="container">
+    <h1 class="hero-title center-text">Rock - Paper - scissor</h1>
+  </header>
+  <main class="container">
+    <!-- buttons -->
+    <section class="row">
+      <div class="column player-buttons">
+        <h3 class="center-text"><strong>Player</strong></h3>
+        <div class="player-choices center-text">
+          <button data-choice='rock' class="button player-button"><i class="icon ph-hand-fist"></i></button>
+          <button data-choice='paper' class="button player-button" ><i class="icon ph-article"></i></button>
+          <button data-choice='scissor' class="button player-button"><i class="icon ph-scissors"></i></button>
+        </div>
+      </div>
+      <div class="column computer-buttons">
+        <h3 class="center-text">Computer</h3>
+        <div class="computer-choices center-text muted">
+          <button class="button computer-button"><i class="icon ph-hand-fist"></i></button>
+          <button class="button computer-button"><i class="icon ph-article"></i></button>
+          <button class="button computer-button"><i class="icon ph-scissors"></i></button>
+        </div>
+      </div>
+    </section>
+    <!-- end buttons -->
+
+    <!-- choice and round result -->
+    <section class="row">
+      <div class="column player">
+        <div class="player-choice center-text">
+          <h3><strong id="player_choice"></strong></h3>
+        </div>
+        <div class="player-situation center-text">
+          <h3><strong id="player_situation"></strong></h3>
+        </div>
+      </div>
+      <div class="column score">
+        <div class="center-text">
+          <h2 class="final-score">
+            <strong class="player-score">0</strong>
+            : 
+            <span class="computer-score">0</span>
+            </h2>
+        </div>
+      </div>
+      <div class="column computter">
+        <div class="player-choice center-text">
+          <h3 id="computer_choice"></h3>
+        </div>
+        <div class="computer-situation center-text">
+          <h3 id="computer_situation"></h3>
+        </div>
+      </div>
+    </section>
+    <!-- end of choice and round result -->
+
+    <!-- final result and play again -->
+    <section class="row">
+      <div class="column center-text final-result">
+        <h2 class="final-result-text"></h2>
+        <button class="button button-outline inactive" id="play_again">Play again</button>
+      </div>
+    </section>
+  </main>
   
 </body>
 <script src="app.js"></script>

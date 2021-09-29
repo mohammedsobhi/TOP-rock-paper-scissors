@@ -1,0 +1,32 @@
+.center-text {
+  text-align: center;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  pointer-events: none;
+}
+
+.muted {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.inactive {
+  display: none;
+}
+
+/* ============== */
+.hero-title {
+  margin-top: 2rem;
+}
+
+section,
+.hero-title,
+.player,
+.computer,
+.player-buttons,
+.computer-buttons {
+  margin-bottom: 3rem;
+}
