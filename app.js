@@ -54,11 +54,7 @@ const playRound = (playerSelection, computerSelection) => {
     playerSituation.textContent = "";
     computerSituation.textContent = "Computer won";
     return "computer won";
-  } else if (
-    (playerSelection === "scissor" && computerSelection === "scissor") ||
-    (playerSelection === "paper" && computerSelection === "paper") ||
-    (playerSelection === "rock" && computerSelection === "rock")
-  ) {
+  } else if (playerSelection === computerSelection) {
     playerSituation.textContent = "tie";
     computerSituation.textContent = "tie";
     return "tie";
